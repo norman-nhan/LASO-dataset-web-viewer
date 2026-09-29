@@ -4,7 +4,7 @@ A lightweight local web interface for reviewing every object, point cloud,
 affordance mask, and language annotation in `data/LASO_dataset`.
 
 ## Setup
-1. Download the datset.
+1. Download the dataset.
 2. Install dependencies.
 ```bash
 # Create uv venv
@@ -14,7 +14,7 @@ uv venv ~/.venv/laso_env --python 3.9
 (laso_env) uv pip install numpy open3d gdown
 ```
 
-> [IMPORTANT]
+> [!IMPORTANT]
 > Pickle files can execute code while loading. Only point this reviewer at a
 > dataset you trust.
 
@@ -23,7 +23,7 @@ uv venv ~/.venv/laso_env --python 3.9
 . .venv/laso_env/bin/activate
 python server.py
 ```
-- `--dataset \path\to\dataset` to specify path to dataset
+- Add `--dataset \path\to\dataset` to specify path to dataset
 ## Controls
 
 - Drag to rotate the point cloud.
