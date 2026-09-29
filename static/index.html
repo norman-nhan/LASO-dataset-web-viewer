@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LASO Dataset Reviewer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fixes.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <header><div class="mark">L</div><div><h1>LASO</h1><p>Dataset reviewer</p></div></header>
+    <div class="filters">
+      <label>Dataset split<select id="split"><option>train</option><option selected>val</option><option>test</option></select></label>
+      <label>Object class<select id="classFilter"><option value="">All classes</option></select></label>
+      <label>Find object<input id="search" type="search" placeholder="Class or shape ID…"></label>
+    </div>
+    <div class="list-head"><span id="resultCount">— objects</span><span class="hint">↑ ↓ navigate</span></div>
+    <div id="objectList" class="object-list"></div>
+  </aside>
+
+  <main>
+    <nav>
+      <div><span class="eyebrow" id="splitLabel">VALIDATION SPLIT</span><h2 id="objectTitle">Loading dataset…</h2><code id="shapeId"></code></div>
+      <div class="nav-buttons"><button id="prev" aria-label="Previous object">←</button><span id="position">— / —</span><button id="next" aria-label="Next object">→</button></div>
+    </nav>
+
+    <section class="workspace">
+      <div class="viewer-card">
+        <canvas id="viewer"></canvas>
+        <div id="loading" class="loading"><span></span>Loading point cloud</div>
+        <div class="viewer-tools">
+          <button id="resetView">Reset view</button>
+          <label class="toggle"><input id="onlyMask" type="checkbox"><span></span>Only labeled points</label>
+        </div>
+        <div class="legend"><i class="base"></i>Object <i class="active"></i>Selected affordance</div>
+        <div class="gesture">Drag to rotate · Scroll to zoom</div>
+      </div>
+
+      <aside class="details">
+        <section class="stats">
+          <div><span>POINTS</span><strong id="pointCount">—</strong></div>
+          <div><span>LABELED</span><strong id="activeCount">—</strong></div>
+          <div><span>COVERAGE</span><strong id="coverage">—</strong></div>
+        </section>
+        <section><h3>Affordances</h3><div id="affordances" class="chips"></div></section>
+        <section><h3>Primary question</h3><p id="primaryQuestion" class="question">—</p></section>
+        <details open><summary>Question variants <span id="questionCount"></span></summary><ol id="questions"></ol></details>
+        <details><summary>Explanatory prompts</summary><ul id="explanations"></ul></details>
+        <details><summary>Reference answers</summary><ul id="answers"></ul></details>
+        <section class="raw"><h3>Original geometry</h3><dl><div><dt>Center</dt><dd id="center">—</dd></div><div><dt>Scale</dt><dd id="scale">—</dd></div></dl></section>
+      </aside>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

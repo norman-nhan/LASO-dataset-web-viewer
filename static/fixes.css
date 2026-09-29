@@ -1,0 +1,39 @@
+/* Layout constraints kept separate so the fixed app shell still has a
+   genuinely scrollable details column in Chromium's grid/flex layout. */
+main {
+  min-height: 0;
+  height: 100vh;
+}
+
+nav {
+  flex: 0 0 94px;
+}
+
+.workspace {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.viewer-card,
+.details {
+  min-height: 0;
+}
+
+.viewer-card {
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, #fff, #f0f1ec);
+}
+
+.details {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+@media (max-width: 650px) {
+  .workspace {
+    overflow: visible;
+  }
+}
