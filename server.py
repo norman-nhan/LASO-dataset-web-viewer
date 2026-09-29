@@ -154,7 +154,7 @@ class Handler(SimpleHTTPRequestHandler):
 def main():
     project = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description="Review the LASO point-cloud dataset in a browser")
-    parser.add_argument("--dataset", type=Path, default=project.parent.parent / "data" / "LASO_dataset")
+    parser.add_argument("--dataset", type=Path, default=project / "data" / "LASO_dataset")
     parser.add_argument("--host", default="0.0.0.0", help="Listen address (0.0.0.0 is required for Docker port forwarding)")
     parser.add_argument("--port", type=int, default=8080)
     parser.add_argument("--open", action="store_true", help="Open the page in the default browser")
