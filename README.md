@@ -4,7 +4,7 @@ A lightweight local web interface for reviewing every object, point cloud,
 affordance mask, and language annotation in `data/LASO_dataset`.
 
 ## Setup
-1. Download the dataset.
+1. Download the [LASO dataset](https://github.com/yl3800/laso).
 2. Install dependencies.
 ```bash
 # Create uv venv
